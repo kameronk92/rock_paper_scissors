@@ -32,7 +32,13 @@ function getComputerChoice(){
 }
 
 function getUserChoice(){
-  return prompt("Please enter rock, paper or scissors ").toLowerCase();
+  const validInput = ["rock", "paper", "scissors"];
+  const userInput = prompt("Please enter rock, paper or scissors ").toLowerCase();
+  if (validInput.includes(userInput)) {
+    return userInput;
+  } else {
+    getUserChoice();
+  }
 }
 
 function result(computerChoice, userChoice) {
