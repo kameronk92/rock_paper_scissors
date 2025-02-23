@@ -1,4 +1,4 @@
-console.log("what the fuck is up dennys");
+console.log("what the frick is up dennys");
 
 let computerScore = 0
 
@@ -6,7 +6,7 @@ let userScore = 0
 
 function turn() {
   // get choices
-  let userChoice = prompt("Please enter rock, paper or scissors ");
+  let userChoice = getUserChoice();
 
   let computerChoice = getComputerChoice();
 
@@ -29,6 +29,10 @@ function turn() {
 function getComputerChoice(){
   const arr = ["rock", "paper", "scissors"];
   return  arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getUserChoice(){
+  return prompt("Please enter rock, paper or scissors ").toLowerCase();
 }
 
 function result(computerChoice, userChoice) {
@@ -92,4 +96,3 @@ function paperResult(computerChoice){
 }
 
 turn()
-console.log("youre here")
