@@ -17,7 +17,13 @@ function turn() {
   console.log("computer score: " + computerScore)
   console.log("user score: " + userScore)
 
-  turn()
+  // ask if user wants to play again
+  let playAgain = prompt("Do you want to play again? (yes/no)").toLowerCase();
+  if (playAgain === "yes") {
+    turn();
+  } else {
+    console.log("Thanks for playing!");
+  }
 }
 
 function getComputerChoice(){
@@ -38,7 +44,8 @@ function result(computerChoice, userChoice) {
 }
 
 function scissorsResult(computerChoice){
-  console.log("the bot chose " + computerChoice)
+  console.log("the bot chose " + computerChoice);
+  console.log("you chose scissors");
   if (computerChoice === "paper") {
     console.log("congrats, scissor beats " + computerChoice);
     userScore++;
@@ -54,6 +61,7 @@ function scissorsResult(computerChoice){
 
 function rockResult(computerChoice){
   console.log("the bot chose " + computerChoice)
+  console.log("you chose rock");
   if (computerChoice === "scissors") {
     console.log("congrats, rock beats " + computerChoice);
     userScore++;
@@ -69,6 +77,7 @@ function rockResult(computerChoice){
 
 function paperResult(computerChoice){
   console.log("the bot chose " + computerChoice)
+  console.log("you chose paper");
   if (computerChoice === "rock") {
     console.log("congrats, paper beats " + computerChoice);
     userScore++;
@@ -83,3 +92,4 @@ function paperResult(computerChoice){
 }
 
 turn()
+console.log("youre here")
